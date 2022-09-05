@@ -22,4 +22,4 @@ En la version de sesiones, la información del usuario es almacenada en el servi
 
 ## ¿Cómo JWT firma sus tokens y como se puede almacenar la información del usuario?
 
-<img src="./src/img3.png" height="600">
+<img src="./src/img3.png" height="500">
