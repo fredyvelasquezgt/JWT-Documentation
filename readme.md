@@ -1,6 +1,6 @@
 # JWT
 
-Jason Web Token
+Json Web Token
 
 ## Preliminares
 
