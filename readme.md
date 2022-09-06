@@ -29,3 +29,7 @@ En el sitio de JWT.io, podemos encontrar un área para poder configurar las cred
 En lado izquierdo está el JWT codificado e identificado por diversos colores. Del lado derecho, está la configuración que nosotros podemos aplicar. En la parte de HEADER se encuentra el tipo de algoritmo que estamos usando para el hash y el tipo de token. En PAYLOAD está el "sub" que es básicamente el ID del JWT, así como el name (o más información) que estamos manejando del usuario. "1at" hace referencia una posible fecha de expiración del token que nosotros podemos manejar, esto es recomendable porque establecemos cuando el token deja de ser útil así nadie más puede utilizarlo. En VERIFY SIGNATURE es en donde sucede la magia. Los dos primeros apartados hacen una combinación del HEADER y de PAYLOAD, luego, mediante una clave secreta junto con el algoritmo, codifica la información que envié al cliente. Si el cliente cambia la información, el JWT no haría match y por lo cual no podría funcionar. La parte azul es el hash de las dos primeras.
 
 ## ¿Por qué usaría JWT?
+
+Supongamos que un banco cuenta con su propio servidor, pero, además de eso, también tiene otro servidor en el que administra toda la información del retiro de sus usuarios. Lo que la gerencia desea es que sus usuarios, una vez inicien sesión en el área del banco, también posean acceso al apartado de retiro.
+
+<img src="./src/img4.png" height=400>
