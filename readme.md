@@ -1,6 +1,6 @@
 # JWT
 
-Json Web Token
+Json Web Token es utilizado para la autorización. JSON Web Token (JWT) es un estándar abierto basado en JSON para crear un token que sirva para enviar datos entre aplicaciones o servicios y garantizar que sean válidos y seguros. El caso más común de uso de los JWT es para manejar la autenticación en aplicaciones móviles o web.
 
 ## Preliminares
 
@@ -30,6 +30,12 @@ En lado izquierdo está el JWT codificado e identificado por diversos colores. D
 
 ## ¿Por qué usaría JWT?
 
-Supongamos que un banco cuenta con su propio servidor, pero, además de eso, también tiene otro servidor en el que administra toda la información del retiro de sus usuarios. Lo que la gerencia desea es que sus usuarios, una vez inicien sesión en el área del banco, también posean acceso al apartado de retiro.
+Supongamos que un banco cuenta con su propio servidor, pero, además de eso, también tiene otro servidor en el que administra toda la información del retiro de sus usuarios. Lo que la gerencia desea es que sus usuarios, una vez inicien sesión en el área del banco, también posean acceso automatico al apartado de retiro, para así evitar que el usuario tenga que hacer log in otra vez.
 
 <img src="./src/img4.png" height=400>
+
+En el caso de que trabajemos con el método de sesiones y cookies, la sesión se guardaría solo en el área de banco y no en el apartado de Retiro, por lo que el usuario tendría que hacer log in otra vez porque no encuentra la sesión.
+
+Por otra parte, si estamos trabajando con JWT, y si la clave secreta es compartida entre el lado del banco y el del retiro, las cosas serán más sencillas. Básicamente, la información del usuario se guardaría en el cliente, en lugar de en los servidores. Esto me permite que no importe en donde inicie sesión, los servidores podrían reconocer el token con su clave secreta y proveer acceso.
+
+Otro ejemplo sería que el banco contase con dos servidores para el mismo fin. En este caso, se contaría con un loadbalancer el cual distribuiría la carga al servidor que cuente con más disponibilidad. Supongamos que el usuario ingresa al servidor #1, pero existe demasiado tráfico y es trasladado al servidor #2, en el caso de trabajar con sesiones, esto provocaría que la sesión se cerrara y que el usuario se viera obligado a iniciar otra. Trajando con JWT, esto no sería necesario, ya que la información estaría almacenada en el cliente, así que no importaría cuantos servers o loadbalancers tenga, el usuario siempre se podría autenticar media vez compartan la misma clave secreta entre ellos.
