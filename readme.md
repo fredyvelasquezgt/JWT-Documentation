@@ -22,7 +22,7 @@ En la version de sesiones, la información del usuario es almacenada en el servi
 
 ## ¿Cómo JWT firma sus tokens y como se puede almacenar la información del usuario?
 
-<img src="./src/img3.png" height="500">
+<img src="./src/img3.png" height="600">
 
 En el sitio de JWT.io, podemos encontrar un área para poder configurar las credenciales de nuestro JWT.
 
@@ -32,7 +32,7 @@ En lado izquierdo está el JWT codificado e identificado por diversos colores. D
 
 Supongamos que un banco cuenta con su propio servidor, pero, además de eso, también tiene otro servidor en el que administra toda la información del retiro de sus usuarios. Lo que la gerencia desea es que sus usuarios, una vez inicien sesión en el área del banco, también posean acceso automatico al apartado de retiro, para así evitar que el usuario tenga que hacer log in otra vez.
 
-<img src="./src/img4.png" height=400>
+<img src="./src/img4.png" height=500>
 
 En el caso de que trabajemos con el método de sesiones y cookies, la sesión se guardaría solo en el área de banco y no en el apartado de Retiro, por lo que el usuario tendría que hacer log in otra vez porque no encuentra la sesión.
 
